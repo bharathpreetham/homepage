@@ -1,4 +1,4 @@
-# Minimalist style home page 
+# Python Based Minimalist Style Home Page 
 ## Libaries
 Created using Python + Flask + SQLAlchemy
 ## Usage
