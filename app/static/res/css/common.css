@@ -1,0 +1,128 @@
+/*---- Reset some browser defaults ----*/
+
+/* Top-level element */
+html {
+	margin: 0;
+	padding: 0;
+	border: none;
+	text-indent: 0;
+	/* For pre and textarea */
+	tab-size: 4;
+	-moz-tab-size: 4;
+}
+
+/* Most block elements and some inline ones */
+body,
+h1, h2, h3,
+p, pre, blockquote, hr,
+ul, ol, li,
+dl, dt, dd,
+table, thead, tbody, tfoot, tr, th, td,
+img, object, iframe,
+abbr {
+	margin: 0;
+	padding: 0;
+	border: none;
+	background: transparent;
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+	text-indent: inherit;
+}
+
+/* Some form elements */
+input, select, textarea {
+	margin: 0;
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+}
+
+/* Some inline elements */
+abbr, del, ins {
+	text-decoration: none;
+}
+
+/* Most hr's are for graceful degradation sans CSS, not for usual display */
+hr {
+	display: none;
+}
+
+/* Pre-HTML5 compatibility */
+header, nav, article, section, footer {
+	display: block;
+}
+
+/* Pre-HTML5 compatibility */
+time {
+	display: inline;
+}
+
+
+/*---- Article content ----*/
+
+article h1 img {
+	width: 1.2em;
+	position: relative;
+	top: -0.1em;
+	border: 1px solid #B0B0B0;
+	border-radius: 12%;
+	vertical-align: middle;
+}
+
+article table {
+	display: block;  /* To make Firefox collapse the table's vertical margins with adjacent elements */
+}
+
+article td, article th {
+	vertical-align: top;
+}
+
+table.col1right td:nth-child(1) { text-align: right; }
+table.col2right td:nth-child(2) { text-align: right; }
+table.col3right td:nth-child(3) { text-align: right; }
+table.col4right td:nth-child(4) { text-align: right; }
+table.col5right td:nth-child(5) { text-align: right; }
+table.col6right td:nth-child(6) { text-align: right; }
+
+article code {
+	white-space: pre-wrap;
+}
+
+*.twocolumn {
+	column-count: 2;
+	-moz-column-count: 2;
+	-webkit-column-count: 2;
+	column-gap: 2em;
+	-moz-column-gap: 2em;
+	-webkit-column-gap: 2em;
+}
+
+*.threecolumn {
+	column-count: 3;
+	-moz-column-count: 3;
+	-webkit-column-count: 3;
+	column-gap: 2em;
+	-moz-column-gap: 2em;
+	-webkit-column-gap: 2em;
+}
+
+*.floatright {
+	float: right;
+}
+
+*.clearright {
+	clear: right;
+}
+
+article > footer {
+	clear: both;
+}
+
+
+/*---- Custom fonts ----*/
+
+@font-face { font-family: "Avenir LT Std";  src: url("avenir-lt-std-roman.otf"        ) format("truetype");  font-weight: normal;  font-style: normal; }
+@font-face { font-family: "Avenir LT Std";  src: url("avenir-lt-std-heavy.otf"        ) format("truetype");  font-weight: bold  ;  font-style: normal; }
+@font-face { font-family: "Avenir LT Std";  src: url("avenir-lt-std-oblique.otf"      ) format("truetype");  font-weight: normal;  font-style: italic; }
+@font-face { font-family: "Avenir LT Std";  src: url("avenir-lt-std-heavy-oblique.otf") format("truetype");  font-weight: bold  ;  font-style: italic; }

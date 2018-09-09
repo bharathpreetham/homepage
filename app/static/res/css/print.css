@@ -1,0 +1,185 @@
+/*---- Content elements ----*/
+
+html {
+	font-family: "Times New Roman", serif;
+	max-width: 60em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+h1, h2, h3 {
+	font-family: "Avenir LT Std", sans-serif;
+}
+
+h1 {
+	margin-top: 1.0em;
+	margin-bottom: 1.0em;
+	text-align: center;
+	font-size: 140%;
+	font-weight: bold;
+}
+
+h2 {
+	margin-top: 1.5em;
+	margin-bottom: 0.8em;
+	font-size: 120%;
+	font-weight: bold;
+}
+
+h3 {
+	margin-top: 1.2em;
+	margin-bottom: 0.6em;
+	font-size: 110%;
+	font-weight: bold;
+}
+
+p {
+	max-width: 35em;
+	margin: 0.8em 0em;
+	text-align: justify;
+	line-height: 1.2;
+	hyphens: auto;
+}
+
+ul {
+	margin: 0.5em 0em 1.0em;
+}
+
+li {
+	margin: 0.5em 0em 0.5em 1.5em;
+}
+
+dl {
+	margin: 1.5em 0em;
+}
+
+dt {
+	margin: 1.0em 0em 0.5em;
+	font-weight: bold;
+}
+
+dd {
+	margin: 0.5em 0em 0.5em 2.0em;
+}
+
+table {
+	margin: 1.5em 0em;
+	border-collapse: collapse;
+}
+
+td, th {
+	padding: 0.3em 0.5em;
+	border: 1px solid #808080;
+}
+
+pre, code {
+	font-family: "Courier New", monospace;
+}
+
+blockquote {
+	margin: 1em 0em;
+	padding: 0em 1em;
+	border: 1px solid #C0C0C0;
+}
+
+iframe {
+	display: none;
+}
+
+*.floatright {
+	margin-left: 2em;
+	margin-bottom: 1em;
+}
+
+*.container.floatright {
+	margin-left: 1.0em;
+	margin-bottom: 0.5em;
+	padding-left: 0.5em;
+	padding-bottom: 0.5em;
+	border-left: 1px solid #A0A0A0;
+	border-bottom: 1px solid #A0A0A0;
+	border-bottom-left-radius: 0.3em;
+}
+
+*.container > a, *.container > a > img {
+	display: block;
+}
+
+*.container.inline {
+	display: inline-block;
+	margin-right: 1em;
+	margin-bottom: 1em;
+	vertical-align: top;
+}
+
+ul.pagelinks {
+	list-style-type: none;
+}
+
+ul.pagelinks img {
+	display: inline-block;
+	margin-right: 0.5em;
+	border: 1px solid #808080;
+	vertical-align: middle;
+}
+
+
+/*---- Site layout ----*/
+
+header h1 {
+	border-bottom: 1px solid #000000;
+	text-align: right;
+	font-size: 80%;
+	font-weight: normal;
+}
+
+header a {
+	text-decoration: none;
+	color: inherit;
+}
+
+#headnav, #sidebar, article > nav {
+	display: none;
+}
+
+article > footer {
+	margin-top: 3em;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	font-size: 75%;
+}
+
+#copyrightlink, #datelink {
+	color: inherit;
+	text-decoration: none;
+}
+
+#feedback {
+	margin-top: 1em;
+	font-size: 70%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+#feedback > p {
+	padding: 0em 1.0em;
+}
+
+#feedback > p:first-child {
+	padding-left: 0em;
+}
+
+#feedback > p:last-child {
+	padding-right: 0em;
+}
+
+div.horzAdvert, div.vertAdvert {
+	display: none;
+}
+
+#main + hr {
+	display: block;
+	border-bottom: 1px solid #000000;
+}

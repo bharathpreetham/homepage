@@ -1,4 +1,3 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -8,11 +7,9 @@
 	<meta http-equiv="Content-Style-Type" content="text/css"/>
 	<meta http-equiv="Content-Script-Type" content="application/javascript"/>
 	<meta name="viewport" content="width=device-width,initial-scale=1"/>
-
-        <link rel="stylesheet" href="{{ url_for('static', filename='res/css/common.css') }}" media="all">
-        <link rel="stylesheet" href="{{ url_for('static', filename='res/css/screen.css') }}" media="screen">
-        <link rel="stylesheet" href="{{ url_for('static', filename='res/css/print.css') }}" media="print">
-
+	<link rel="Stylesheet" href="https://www.nayuki.io/res/style/common.css" type="text/css" media="all"/>
+	<link rel="Stylesheet" href="https://www.nayuki.io/res/style/screen.css" type="text/css" media="screen"/>
+	<link rel="Stylesheet" href="https://www.nayuki.io/res/style/print.css" type="text/css" media="print"/>
 	<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://www.nayuki.io/rss20.xml"/>
 <style type="text/css">
 article .not {
@@ -44,18 +41,14 @@ article div.table > ul > li > p:first-child {
 </style>
 </head>
 
-<header><h1><a href="/">Star Coder</a></h1><nav id="headnav"><h2>Navigation</h2><ul><li><a href="/posts">Recent </a></li><li><a href="/category/programming">Programming </a></li><li><a href="/category/math">Math </a></li><li><a href="/page/java-se-5-is-the-most-significant-release" title="Page: Java SE 5 is the most significant release">Random </a></li></ul><ul><li><a href="/page/about">About/Contact </a></li><li><a href="https://github.com/melodyyu" onclick="if('ga' in window)ga('send','pageview','https://github.com/melodyyu');">GitHub </a></li></ul></nav></header>
+<header><h1><a href="/">Project Melody</a></h1><nav id="headnav"><h2>Navigation</h2><ul><li><a href="/posts">Recent </a></li><li><a href="/category/programming">Programming </a></li><li><a href="/category/math">Math </a></li><li><a href="/page/java-se-5-is-the-most-significant-release" title="Page: Java SE 5 is the most significant release">Random </a></li></ul><ul><li><a href="/page/about">About/Contact </a></li><li><a href="https://github.com/melodyyu" onclick="if('ga' in window)ga('send','pageview','https://github.com/melodyyu');">GitHub </a></li></ul></nav></header>
 <hr/>
 
 
 <body>
 
- <article>
-
- {% block content %}
- {% endblock %}
-
-</article>
+  {% block content %}
+	{% endblock %}
 
 </body>
 </html>
