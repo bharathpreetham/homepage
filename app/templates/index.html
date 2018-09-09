@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1>Add post</h1>
+    <form method="POST" action="/">
+      <input type="text" name="title">
+      <input type="submit" value="Add">
+    </form>
+
+    <h1>Pages</h1>
+    <table>
+      {% for post in posts %}
+        <tr>
+          <td>
+            {{post.title}}
+          </td>
+          <td>
+            <form method="POST" action="./update" style="display: inline">
+              <input type="hidden" value="{{post.title}}" name="oldtitle">
+              <input type="text" value="{{post.title}}" name="newtitle">
+              <input type="submit" value="Update">
+            </form>
+          </td>
+          <td>
+            <form method="POST" action="./delete" style="display: inline">
+              <input type="hidden" value="{{post.title}}" name="title">
+              <input type="submit" value="Delete">
+            </form>
+          </td>
+        </tr>
+      {% endfor %}
+   
+ {% endblock %}

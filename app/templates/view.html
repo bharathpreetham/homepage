@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="blog-title"> {{post.title}} </h1>
+     <div class="entry-thumbnail"></div>
+     <div>
+     {{post.body | safe}} 
+     </div>
+ {% endblock %}
