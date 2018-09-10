@@ -70,12 +70,10 @@ def view():
     post_id = request.args.get("id")
     #print(post_id)
     if request.method == 'POST':
-        print(request.form)
+        #print(request.form)
         post_id = request.form.get("id")
     else:
-        print("hehe")
         post_id = request.args.get("id")
-        print(post_id)
     try:
         #post = db.session.query(Post).filter(Post.id == post_id).first()
         post = Post.query.filter_by(id = post_id).first()
