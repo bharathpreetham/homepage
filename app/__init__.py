@@ -68,7 +68,7 @@ def home():
 @app.route("/view", methods=["GET","POST"])
 def view():
     post_id = request.args.get("id")
-    print(post_id)
+    #print(post_id)
     if request.method == 'POST':
         print(request.form)
         post_id = request.form.get("id")
