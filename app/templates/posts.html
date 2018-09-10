@@ -2,28 +2,18 @@
 
 {% block content %}
 
-    <h1>Website Posts</h1>
-    <table class="table table-boarded table-hover">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Title</th>
-        <th>Category</th>
-        <th>Action</th>
-      </tr>
-    </thead>
+<h1>Programming</h1>
+<p>Related categories: <a href="/category/general">General</a>, <a href="/category/math">Math</a><br/>
+Languages: <a href="/category/java">Java</a>, <a href="/category/javascript">JavaScript</a>, <a href="/category/python">Python</a>, <a href="/category/c-cpp">C/C++</a>, <a href="/category/x86">x86 assembly</a><br/>
+Topics: <a href="/category/cryptography">Cryptography</a>, <a href="/category/image-processing">Image processing</a>, <a href="/category/language-critique">Language critique</a></p>
+
+
+    <h2>Pages</h2>
+
+<ul class="pagelinks">
       {% for post in posts %}
-        <tr>
-          <td> {{post.id}} </td> 
-          <td> {{post.title}} </td> 
-	  <td> {{post.category_id}} </td> 
-	   <td>
-            <form method="POST" action="./view" style="display: inline">
-              <input type="hidden" value="{{post.id}}" name="id">
-              <input type="submit" value="View">
-            </form>
-          </td>
-        </tr>
+      <li><a href="/view?id={{post.id}}">{{post.title}}</a></li>
       {% endfor %}
+</ul>
    
  {% endblock %}
