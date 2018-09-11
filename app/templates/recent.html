@@ -3,6 +3,19 @@
 {% block content %}
 
 <style type="text/css">
+@media(min-width: 600px) {
+	#maintable {
+		display: table;
+		margin: 0 auto;
+	}
+	#maintable > div {
+		display: table-cell;
+	}
+	#maintable > div:nth-child(2) {
+		max-width: 20em;
+		padding-left: 4em;
+	}
+}
 #recentpages {
 	display: table;
 	margin-left: auto;
@@ -49,20 +62,40 @@
 	text-decoration: underline;
 }
 </style>
+<div id="maintable">
+	<div>
+	<h1>Recent Posts</h1>
+	<table id="recentpages">
+		<thead>
+			<tr>
+				<th>Page</th>
+				<th>Last updated</th>
+			</tr>
+		</thead>
+		<tbody>
+		 {% for post in posts %}
+		 <tr><td><a href="/page/{{post.slug}}">{{post.title}}</a></td><td><time>{{post.updated_on.strftime('%Y-%m-%d') }}</time></td></tr>
+		 {% endfor %}
+		</tbody>
+	</table>
+</div>
+<div>
+	<h2>About</h2>
+ <br>
+  <br>
+		<p>Hello! I’m Melody, a little student from California. My interests are in computer science and writing.</p>
+		<p>On this web site you will find my programming articles, various writings, and random work.</p>
 
-<h1>Recent Posts</h1>
-<table id="recentpages">
-	<thead>
-		<tr>
-			<th>Page</th>
-			<th>Last updated</th>
-		</tr>
-	</thead>
-	<tbody>
-	 {% for post in posts %}
-	 <tr><td><a href="/page/{{post.slug}}">{{post.title}}</a></td><td><time>{{post.updated_on.strftime('%Y-%m-%d') }}</time></td></tr>
-	 {% endfor %}
-	</tbody>
-</table>
+		<section id="categories">
+			<h2>Categories</h2>
+			<ul>
+				<li><a href="/category/general">General</a></li>
+				<li><a href="/category/programming">Programming</a></li>
+				<li><a href="/category/math">Math</a></li>
+				<li><a href="/category/writing">Writing</a></li>
+			</ul>
+		</section>
+	</div>
+</div>
 
  {% endblock %}
