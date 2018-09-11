@@ -26,5 +26,7 @@ pip install -r requirements.txt
 ### Deployment
 
 git pull
+
 sudo systemctl restart myproject
+
 sudo systemctl restart nginx
