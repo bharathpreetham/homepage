@@ -89,6 +89,21 @@ def view_post(slug):
     return render_template("view.html", post = post)
 
 
+@app.route("/category/<category>")
+def view_category(category):
+    try:
+        c_qry = Category.query.filter_by(name = category).first()
+        if not c_qry:
+            return redirect('/')
+        else:
+            posts = Post.query.filter_by(category_id = c_qry.id).all()
+            print(posts)
+    except Exception as e:
+            print("Failed to query a post to SQL database")
+            #print(e)
+            return page_not_found(e)
+    return render_template("category.html", posts = posts, category = category.capitalize())
+
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), 404
