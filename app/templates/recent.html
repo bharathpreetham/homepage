@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style type="text/css">
+#recentpages {
+	display: table;
+	margin-left: auto;
+	margin-right: auto;
+}
+#recentpages td, #recentpages th {
+	border: none;
+}
+#recentpages th:nth-child(1) {
+	text-align: left;
+	border-right : 1px solid #D0D0D0;
+	border-bottom: 1px solid #D0D0D0;
+}
+#recentpages th:nth-child(2) {
+	text-align: right;
+	border-left  : 1px solid #D0D0D0;
+	border-bottom: 1px solid #D0D0D0;
+}
+#recentpages td[colspan="2"] {
+	padding: 1.5em 0 0.5em 0em;
+	font-weight: bold;
+}
+#recentpages td {
+	padding: 0em;
+	vertical-align: middle;
+}
+#recentpages td:nth-child(2) {
+	text-align: right;
+	font-size: 100%;
+}
+#recentpages img {
+	display: inline-block;
+	width: 2.5em;
+	margin: 4px 0.5em 4px 0em;
+	border: 1px solid #D0D0D0;
+	border-radius: 12%;
+	vertical-align: middle;
+}
+#recentpages a {
+	padding: 0.3em 0.6em 0.3em 0em;
+	text-decoration: none;
+}
+#recentpages a:hover {
+	text-decoration: underline;
+}
+</style>
+
+<h1>Recent Posts</h1>
+<table id="recentpages">
+	<thead>
+		<tr>
+			<th>Page</th>
+			<th>Last updated</th>
+		</tr>
+	</thead>
+	<tbody>
+	 {% for post in posts %}
+	 <tr><td><a href="/page/{{post.slug}}">{{post.title}}</a></td><td><time>{{post.updated_on.strftime('%Y-%m-%d') }}</time></td></tr>
+	 {% endfor %}
+	</tbody>
+</table>
+
+ {% endblock %}

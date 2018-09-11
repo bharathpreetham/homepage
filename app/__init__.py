@@ -12,54 +12,34 @@ from flask_sqlalchemy import SQLAlchemy
 from wtforms import Form, StringField, SelectField, validators
 from flask_table import Table, Col, LinkCol
 
-project_dir = os.path.dirname(os.path.abspath(__file__))
-database_file = "sqlite:///{}".format(os.path.join(project_dir, "melodyyu_database.db"))
 
 #create the web app
 app = Flask(__name__)
 
 #connect to the melodyyu.com database
-app.config["SQLALCHEMY_DATABASE_URI"] = database_file
+app.config["SQLALCHEMY_DATABASE_URI"] =  "sqlite:///database.db"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db = SQLAlchemy(app)
 
-class Post(db.Model):
-    __tablename__ = "post"
-
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String, nullable=False)
-    body  = db.Column(db.String,unique=True, nullable=False)
-    category_id = db.Column(db.Integer, db.ForeignKey('category.id'),
-        nullable=False)
-    category    = db.relationship('Category', backref=db.backref(
-        'posts', order_by=id),lazy=True)
-
-    #def __repr__(self):
-    #    return "<Title: {}>".format(self.title)
-
-class Category(db.Model):
-    __tablename__ = "category"
-
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(50), nullable=False)
-
-    def __repr__(self):
-        return '{}' % self.name
+#db = SQLAlchemy(app)
+from .models import db
+from .models import Tag, Post, Category
 
 
 @app.route('/posts')
 def posts():
     results = []
-    qry = db.session.query(Post)
-    results = qry.all()
+    posts_qry = db.session.query(Post)
+    category_qry = db.session.query(Category)
+    articles = posts_qry.all()
+    categories = category_qry.all()
     #print(results)
 
-    if not results:
-        flash('No results found!')
+    if not articles:
+        flash('No posts found!')
         return redirect('/')
     else:
         # display results
-        return render_template('posts.html', posts = results)
+        return render_template('posts.html', posts = articles, categories = categories)
 
 @app.route('/', methods=["GET", "POST"])
 def home():
@@ -84,6 +64,30 @@ def view():
             #print(e)
             return page_not_found(e)
     return render_template("view.html", post = post)
+
+
+@app.route("/recent")
+def recent():
+    results = []
+    posts_qry = db.session.query(Post)
+    articles = posts_qry.all()
+
+    if not articles:
+        flash('No posts found!')
+        return redirect('/')
+    else:
+        # display results
+        return render_template('recent.html', posts = articles)
+
+
+@app.route("/page/<slug>")
+def view_post(slug):
+    """View a post by slug"""
+    post = Post.query.filter_by(slug=slug).first()
+    if not post:
+        return redirect('/')
+    return render_template("view.html", post = post)
+
 
 @app.errorhandler(404)
 def page_not_found(e):

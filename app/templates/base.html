@@ -42,13 +42,14 @@ article div.table > ul > li > p:first-child {
 </style>
 </head>
 
-<header><h1><a href="/">Star Coder</a></h1><nav id="headnav">
+<header><h1><a href="/">Melody's  World</a></h1><nav id="headnav">
 
 <h2>Navigation</h2>
 <ul>
-<li><a href="/posts">Recent </a></li>
-<li><a href="/category/programming">Programming </a></li>
+<li><a href="/recent">Recent</a></li>
+<li><a href="/category/programming">Programming</a></li>
 <li><a href="/category/math">Math </a></li>
+<li><a href="/category/writing">Writing</a></li>
 <li><a href="/page/about">About</a></li>
 <li><a href="https://github.com/melodyyu" onclick="if('ga' in window)ga('send','pageview','https://github.com/melodyyu');">GitHub </a></li></ul></nav></header>
 <hr/>
@@ -56,12 +57,19 @@ article div.table > ul > li > p:first-child {
 
 <body>
 
- <article>
-
+<div id="main">
+<article>
  {% block content %}
  {% endblock %}
-
 </article>
+</div>
 
+<footer id="feedback">
+
+	<p>Question/comment? <a href="/page/about#contact">Contact me</a></p>
+
+	<p><a href="/page/about#copyright" id="copyrightlink" title="Copyright information">Copyright © 2018 Melody</a></p>
+
+</footer>
 </body>
 </html>
