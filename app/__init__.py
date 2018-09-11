@@ -43,7 +43,7 @@ def posts():
 
 @app.route('/', methods=["GET", "POST"])
 def home():
-    return redirect('/posts')
+    return redirect('/recent')
 
 @app.route("/view", methods=["GET","POST"])
 def view():

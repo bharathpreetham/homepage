@@ -2,9 +2,9 @@
 
 {% block content %}
 
-<h1>Programming</h1>
+<h1>Articles</h1>
 
-<p>Related categories: 
+<p>Related categories:
 
 {% for category in categories %} <a href="/category/{{category.name}}">{{category.name}}</a>{{"," if not loop.last }} {% endfor %}
 <br/>
@@ -16,5 +16,5 @@
       <li><a href="/page/{{post.slug}}">{{post.title}}</a></li>
       {% endfor %}
 </ul>
-   
+
  {% endblock %}
