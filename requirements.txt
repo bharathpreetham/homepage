@@ -8,7 +8,9 @@ Flask-WTF==0.14.2
 itsdangerous==0.24
 Jinja2==2.10
 MarkupSafe==1.0
+python-slugify==1.2.6
 pytz==2018.5
 SQLAlchemy==1.2.11
+Unidecode==1.0.22
 Werkzeug==0.14.1
 WTForms==2.2.1
