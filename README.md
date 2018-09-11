@@ -22,3 +22,9 @@ pip install -r requirements.txt
 ### Start the website
 
 ./run.py
+
+### Deployment
+
+git pull
+sudo systemctl restart myproject
+sudo systemctl restart nginx
