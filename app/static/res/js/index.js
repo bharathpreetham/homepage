@@ -1,5 +1,6 @@
 // get navigation links
-var allLinks = document.getElementsByTagName('a');
+//var allLinks = document.getElementsByTagName('a');
+var allLinks = document.getElementsByName('types');
 // get last word said element
 var strongEl = document.getElementById('latest-word');
 
@@ -11,6 +12,9 @@ var recognizing = false;
 // input for speech synthesis
 var speechMsgInput = document.getElementById('speech-msg');
 var voiceSelect = document.getElementById('voice');
+
+// output animals based on voice recogonition
+var outputAnimal = document.getElementById('output');
 
 // load voices
 // Execute loadVoices.
@@ -44,13 +48,14 @@ recognition.onresult = function(event){
     // if word matches chenge the colour of the link
     if (saidWord.toLowerCase().indexOf(dataWord) != -1) {
       allLinks[i].style.color = 'red';
+      outputAnimal.src = "/static/res/images/" + allLinks[i].dataset.img;
     }
   }
   
   // append the last word to the bottom sentence
   strongEl.innerHTML = saidWord;
-
-  speechMsgInput.value = saidWord;
+  speechMsgInput.value = saidWord; 
+ 
 }
 
 // speech error handling
