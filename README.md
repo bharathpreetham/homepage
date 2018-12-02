@@ -8,7 +8,7 @@ Created using Python + Flask + SQLAlchemy
 
 ### Install virtual environment for Python
 
-pip install virtualenv
+pip install virtualenv 
 python3 -m virtualenv venv
 
 ### Activate the virtual environement
